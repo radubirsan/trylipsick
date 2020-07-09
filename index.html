@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<h1 style="position:absolute;font-size:27px;color:white;background-color: black; padding-left:10px; top:35px; font-family: 'Comic Sans MS', 'cursive'">Try Lipstick online </h1>
+<h2 style="position:absolute;font-size:20px;color:orange;top: 60px;background-color: black; padding-left:10px;font-family: 'Comic Sans MS', 'cursive'">Webcam lip color makeup</h2>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-35587575-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-35587575-2');
+</script>
+
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=0.75">
+
+  <link rel="icon" type="image/png"                 href="./assets/icons/app-logo-128x128.png">
+
+  <link rel="icon" type="image/png" sizes="192x192" href="./assets/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32"   href="./assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96"   href="./assets/icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16"   href="./assets/icons/favicon-16x16.png">
+
+  <link rel="icon" type="image/ico"                 href="./assets/icons/favicon.ico">
+
+  <link rel="apple-touch-icon" sizes="57x57"        href="./assets/icons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60"        href="./assets/icons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72"        href="./assets/icons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76"        href="./assets/icons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114"      href="./assets/icons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120"      href="./assets/icons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144"      href="./assets/icons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152"      href="./assets/icons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180"      href="./assets/icons/apple-icon-180x180.png">
+
+  <title>Try Lipstick</title>
+
+  <style>
+
+    html, body {
+      margin: 0; padding: 0;  background-color: #ffffff;
+      -ms-text-size-adjust: none; -moz-text-size-adjust: none; -webkit-text-size-adjust: none;
+    }
+
+  </style>
+
+  <link rel="stylesheet" type="text/css" href="./css/brfv5_examples.css">
+
+</head>
+
+<body>
+ <section class="header">
+ 
+
+<div id="__brfv5" class="__brfv5"></div>
+
+
+<script type="module" src="js/examples/face_tracking__coloring_libs.js"></script>
+<script src="colorPicker.js"></script>
+<div align="center" style=" background-color: pink;" id="CameraAccess">
+Please allow camera access to begin!
+</div>
+
+
+
+
+
+
+<div id="test">
+    <canvas id="myCanvas" width="640" height="480"></canvas>
+</div>
+     
+    <div class="wrap" style="bottom: 55px; left:20px;background: rgba(161, 161, 161, 0.5); padding:15px;">
+	
+
+      <div class="half" >
+        <div class="colorPicker"></div>
+      </div>
+      <div class="half readout">
+        <span class="title"></span>
+        <div id="values"></div>
+      </div>
+	  
+
+<div style="color:white;font-weight: bold;">Blur background:</div>
+		  <label class="switch" >
+  <input type="checkbox" checked onclick="switchBlur()" id="blurSwitch">
+  <span class="slider round"></span>
+ 
+		</label>
+  <div style="color:white;font-weight: bold;">Color transperency:</div>
+ <input type="range" id="lipAlpha" name="points" min="0" max="10" onclick="switchAlpha()">
+ <div>
+ <a href="https://www.sephora.com/shop/lipstick">Buy this lipstick color</a>
+ <button  type="button" id="myBtn" onclick="showAbout()" >About</button>
+</div>
+
+    </div>
+	
+
+<script > 
+
+
+// Create a new color picker instance
+// https://iro.js.org/guide.html#getting-started
+var colorPicker = new iro.ColorPicker(".colorPicker", {
+  // color picker options
+  // Option guide: https://iro.js.org/guide.html#color-picker-options
+  width: 160,
+  color: "rgb(255, 0, 0)",
+  borderWidth: 4,
+  borderColor: "#777777",
+});
+function showAbout() {
+console.log("ABOUT");
+if(document.getElementById('polina').style.visibility == 'visible'){
+document.getElementById('polina').style.visibility = 'hidden' ;
+document.getElementById('__brfv5').style.visibility = 'visible' ;
+document.getElementById('myCanvas').style.visibility = 'visible' ;
+
+
+}
+else{
+document.getElementById('polina').style.visibility = 'visible' ;
+document.getElementById('__brfv5').style.visibility = 'hidden' ;
+document.getElementById('myCanvas').style.visibility = 'visible' ;
+}
+}
+function switchAlpha(e){
+
+console.log();
+
+lipColorAlpha = document.getElementById('lipAlpha').value/10;
+
+}
+var lipColorAlpha = 0.5;
+var colorVar = '#470000'
+function switchBlur(e){
+var x = document.getElementById("__brfv5");
+if(document.getElementById("blurSwitch").checked) {
+	x.setAttribute("style","filter: blur(3px)");
+}
+else{
+ x.setAttribute("style","filter: blur(0px)");
+}
+}
+
+// https://iro.js.org/guide.html#color-picker-events
+colorPicker.on(["color:init", "color:change"], function(color){
+  // Show the current color in different formats
+  // Using the selected color: https://iro.js.org/guide.html#selected-color-api
+  console.log( [
+    "hex: " + color.hexString,
+    "rgb: " + color.rgbString,
+    "hsl: " + color.hslString,
+  ].join("<br>"));
+  
+  
+  colorVar = color.hexString;
+});
+
+
+function detectmob() { 
+ if( navigator.userAgent.match(/Android/i)
+ || navigator.userAgent.match(/webOS/i)
+ || navigator.userAgent.match(/iPhone/i)
+ || navigator.userAgent.match(/iPad/i)
+ || navigator.userAgent.match(/iPod/i)
+ || navigator.userAgent.match(/BlackBerry/i)
+ || navigator.userAgent.match(/Windows Phone/i)
+ ){
+    return true;
+  }
+ else {
+    return false;
+  }
+}
+var isMobile = detectmob();
+if(isMobile) {
+ var x = document.getElementById("test");
+	 x.style.display = "none";
+}
+console.log(detectmob(),123);
+</script>
+
+
+<script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=5d6cff9f16b81b0012138dd0&product=inline-share-buttons" async="async"></script>
+<div class="sharethis-sticky-share-buttons"></div>
+
+
+
+<div id="polina" style="padding-top:210px">
+
+<p><b>Augumented reality lips</b></p>
+
+<p>This page allows user to try on different color, it uses advanced image recognition to identify the lips in the video feed and applies the selected color. </p>
+<p>The image processing is done localy on no data is send to the server</p>
+
+<p>radu.flash@gmail.com</p> 
+<button  type="button"  onclick="showAbout()" >Close</button>
+
+</div>
+
+
+</section>
+ 
+</body>
+
+</html>

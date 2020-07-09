@@ -1,0 +1,325 @@
+.__brfv5        { position: absolute; top: 0; left: 0; width: 100%; height: 100% }
+.__brfv5        { font-family: Arial, sans-serif; font-size: 0.85em; }
+
+.__brfv5 .abs   { position: absolute; }
+.__brfv5 .rel   { position: relative; }
+.__brfv5 .fixed { position: fixed; }
+.__brfv5 .tl    { top: 0; left: 0; }
+.__brfv5 .tr    { top: 0; right: 0; }
+.__brfv5 .tl10  { top: 10px; left: 10px; }
+.__brfv5 .tr10  { top: 10px; right: 10px; }
+.__brfv5 .tr60  { top: 60px; right: 10px; }
+.__brfv5 .tr276 { top: 60px; right: 10px; }
+.__brfv5 .br    { bottom: 0; right: 0; }
+.__brfv5 .bl10  { bottom: 10px; left: 10px; }
+.__brfv5 .br10  { bottom: 10px; right: 10px; }
+.__brfv5 .fw    { width: 100% }
+.__brfv5 .fh    { height: 100% }
+.__brfv5 .fvw   { width: 100vw }
+.__brfv5 .fvh   { height: 80vh; }
+.__brfv5 .img   { width: 96px; height: 96px; }
+.__brfv5 .mc    { margin-left: auto; margin-right: auto; }
+.__brfv5 .c     { top: 50%; left: 50%; transform: translateX(-50%) translateY(-50%); }
+.__brfv5 .cm    { top: 50%; left: 50%; transform: translateX(-50%) translateY(-50%) scaleX(-1.0); }
+.__brfv5 .br50  { border-radius: 50%; background-color: transparent; }
+.__brfv5 .cb    { box-sizing: border-box; border: #00a0ff solid 6px }
+.__brfv5 .fsimg { width: 64px; height: 64px; top: calc(50% - 32px); left: calc(50% - 32px) }
+
+.__brfv5 .swl   { width:  100vw; max-width: 640px; /*left: calc(50% - 320px)*/}
+.__brfv5 .shl   { height: 480px }
+
+.__brfv5 .swp   { width:  100vw; /*max-width: 480px; *//*left: calc(50% - 240px)*/}
+.__brfv5 .shp   { height: 640px }
+
+.__brfv5 .bg-t  { background: transparent; }
+.__brfv5 .bg-w  { background: #ffffff; }
+.__brfv5 .bg-r  { background: #ba2421; }
+.__brfv5 .bg-pb { background: rgba(0, 160, 255, 0.05); }
+
+.__brfv5 .o6    { opacity: 0.75; }
+.__brfv5 .vh    { visibility: hidden; }
+.__brfv5 .vv    { visibility: visible; }
+.__brfv5 .oh    { overflow:   hidden; }
+.__brfv5 .ontop { z-index: 999 }
+
+.__brfv5 .preloader-fh  { height: 100%; }
+.__brfv5 .preloader-mh  { height:  8px; }
+.__brfv5 .bar           { height:  8px; background: #00a0ff; }
+.__brfv5 .bar-t         { transition: width 2s; }
+
+.__brfv5 .stats         { width: 250px; color: #00a0ff; font-size: 1.4em; text-shadow: 1px 1px #ffd200; padding: 16px }
+
+
+
+
+
+
+
+/* 
+#myCanvas {
+  
+    
+    
+   position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+   
+    object-fit: fill;
+    -webkit-filter: blur(1px);
+    -moz-filter: blur(1px);
+    -o-filter: blur(1px);
+    -ms-filter: blur(1px);
+    filter: blur(1px);
+}
+*/
+.header{
+    height: 100vh;
+    background-image:linear-gradient(45deg, rgba(125,173,163,.1) 0%, rgba(229,227,223,.3) 46%, rgba(255,186,178,1) 100%),url(https://trylipstick.com/BKG.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow-x:hidden;
+}
+
+ @media screen and (min-width: 768px) {
+	
+	 
+    /* styles here */
+	#__brfv5 {
+  
+    
+    
+    /* object-fit: fill; 
+    -webkit-filter: blur(3px);
+    -moz-filter: blur(3px);
+    -o-filter: blur(3px);
+    -ms-filter: blur(3px);*/
+    filter: blur(3px);
+}
+}
+
+
+
+
+
+#test{
+	 padding: 0;
+    margin-left: auto; margin-right: auto; 
+    
+    width: 640px;
+    height: 480px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+	
+   
+   
+   
+}
+
+
+
+
+
+
+.wrap {
+ 
+ position: absolute;
+ bottom:0;
+  
+ 
+  
+  
+}
+
+
+
+.readout {
+ 
+  line-height: 180%;
+}
+
+#values {
+ font-family: monospace;
+  line-height: 150%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* SWITCH BLUR */
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+
+
+.stopfade { 
+   opacity: .5;
+}
+
+#polina { 
+  font-family: Agenda-Light, Agenda Light, Agenda, Arial Narrow, sans-serif;
+  font-weight:100; 
+  background: rgba(0,0,0,0.3);
+  color: white;
+  padding: 2rem;
+  width: 33%;
+  margin:2rem;
+  float: right;
+  font-size: 1.2rem;
+  visibility:hidden;
+ 
+ 
+ 
+    margin-left: auto; margin-right: auto; 
+    
+    width: 640px;
+    height: 480px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  
+  z-index:1000;
+}
+h1 {
+  font-size: 3rem;
+  text-transform: uppercase;
+  margin-top: 0;
+  letter-spacing: .3rem;
+}
+
+button { 
+  display: block;
+  width: 80%;
+  padding: .4rem;
+  border: none; 
+  margin: 1rem auto; 
+  color:#ffffff;
+  background: rgba(166,166,166,0.63);
+ 
+  border-radius: 3px; 
+  cursor: pointer;
+  transition: .3s background;
+}
+
+#polina button { 
+  display: block;
+  width: 80%;
+  padding: .4rem;
+  border: none; 
+  margin: 1rem auto; 
+  font-size: 1.3rem;
+  background: rgba(255,255,255,0.23);
+  color: #fff;
+  border-radius: 3px; 
+  cursor: pointer;
+  transition: .3s background;
+}
+#polina button:hover { 
+   background: rgba(0,0,0,0.5);
+}
+
+a {
+  display: inline-block;
+  color: #fff;
+  text-decoration: none;
+  background:rgba(0,0,0,0.5);
+  padding: .5rem;
+  transition: .6s background; 
+}
+a:hover{
+  background:rgba(0,0,0,0.9);
+}
+@media screen and (max-width: 500px) { 
+  div{width:70%;} 
+}
+@media screen and (max-device-width: 800px) {
+  html { background: url(https://thenewcode.com/assets/images/polina.jpg) #000 no-repeat center center fixed; }
+  #bgvid { display: none; }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
